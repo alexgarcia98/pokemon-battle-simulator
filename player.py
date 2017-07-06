@@ -8,6 +8,5 @@ class Player:
         self.name = name
         self.team = team
 
-def make_player():
-    print("Player 1, what is your name?")
-    p1 = stdin.readline()
+def make_player(name, team):
+    return Player(name, team)

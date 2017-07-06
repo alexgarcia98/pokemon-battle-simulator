@@ -66,13 +66,13 @@ bonuses = [1, 1, 1, 1, 1, 1, 1]
 def Venusaur():
     venusaur_stats = [100, HP(359, 359), 153, 202, 284, 256, 222, bonuses, 11, 3]
     venusaur_moves = [[giga_drain, 16], [sludge_bomb, 16], [synthesis, 8], [hp_fire, 24]]
-    venusaur = Pokemon("Venusaur", chlorophyll, venusaur_stats, venusaur_moves, 0, "Venusaurite")
+    venusaur = Pokemon("Venusaur", "Offensive Tank", chlorophyll, venusaur_stats, venusaur_moves, 0, "Venusaurite")
     return venusaur
 
 def Charizard():
     charizard_stats = [100, HP(297, 297), 267, 193, 228, 206, 328, bonuses, 9, 2]
     charizard_moves = [[dragon_dance, 32], [dragon_claw, 24], [flare_blitz, 24], [roost, 16]]
-    charizard = Pokemon("Charizard", blaze, charizard_stats, charizard_moves, 0, "Charizardite X")
+    charizard = Pokemon("Charizard", "Dragon Dance X", blaze, charizard_stats, charizard_moves, 0, "Charizardite X")
     return charizard
 
 pklist = [Venusaur, Charizard]

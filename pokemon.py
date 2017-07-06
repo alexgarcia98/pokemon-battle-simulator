@@ -1,5 +1,6 @@
-# a Pokemon is Pokemon(str, ability, list, list, Status, str)
+# a Pokemon is Pokemon(str, str, ability, list, list, Status, str)
 # where name is represented with a str,
+# build is represented with a str,
 # ability is an ability,
 # stats are represented with a list,
 # moves are represented with a list,
@@ -25,8 +26,9 @@
 # 6 : frozen
 
 class Pokemon:
-    def __init__(self, name, ability, stats, moves, status, item):
+    def __init__(self, name, build, ability, stats, moves, status, item):
         self.name = name
+        self.build = build
         self.ability = ability
         self.stats = stats
         self.moves = moves
@@ -36,6 +38,7 @@ class Pokemon:
     def __eq__(self, other):
         return ((type(other) == Pokemon)
           and self.name == other.name
+          and self.build == other.build
           and self.ability == other.ability
           and self.stats == other.stats
           and self.moves == other.moves

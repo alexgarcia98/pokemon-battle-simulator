@@ -20,5 +20,8 @@ class Ability:
 
 # str pokemon pokemon -> ?
 # generic use of an ability
-def use_ability(name, pkmn1, pkmn2, weather):
-    return name(pkmn1, pkmn2, weather)
+def use_ability(name, pkmn1, pkmn2, weather, terrain, hazards):
+    return name(pkmn1, pkmn2, weather, terrain, hazards)
+
+def huge_power(pkmn1, pkmn2, weather, terrain, hazards):
+    pkmn1.bonuses[0] *= 2
