@@ -131,12 +131,12 @@ def execute_action(arena1, action1, action2):
 def attack_mon(arena1, action1, action2, p1, p2):
     arena2 = domage(arena1, action1, action2, p1, p2)
     if(type(action2) == Move):
-        arena2 = domage(arena1, action2, action1, p2, p1)
-    return arena2
+        arena3 = domage(arena2, action2, action1, p2, p1)
+    return arena3
 
 def domage(arena1, action1, action2, p1, p2):
-    c1 = arena1.player1.current
-    c2 = arena1.player2.current
+    c1 = p1.current
+    c2 = p2.current
     damage = damage_calc(c1, c2, action1)
     hprem = c2.stats[1].current - damage
     if(hprem < 0):
@@ -173,7 +173,7 @@ def display_txt(arena1, action1, action2, p1, p2):
         s = ("\n" + str(c1) + " used " + str(action1.name) + "!" +
             "\nIt doesnt affect " + str(c2) + "... ")
     elif((effc[action1.mtype][c2.stats[8]] *
-        effc[action1.mtype][c2.stats[9]]) == 0):
+        effc[action1.mtype][c2.stats[9]]) > 1):
         s = ("\n" + str(c1) + " used " + str(action1.name) + "!" +
             "\nIt's not very effective... " + str(c2) + " is left with " +
             str(hprem) + " HP.")

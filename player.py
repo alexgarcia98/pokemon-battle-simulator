@@ -11,6 +11,17 @@ class Player:
         self.team = team
         self.current = current
 
+    def __eq__(self, other):
+        return ((type(other) == Player)
+          and self.name == other.name
+          and self.team == other.team
+          and self.current == other.current
+        )
+
+    def __repr__(self):
+        return ("Player({!r}, {!r}, {!r})".format(self.name, self.team, self.current))
+
+
 def make_player(name, team):
     return Player(name, team, None)
 
