@@ -72,3 +72,11 @@ def is_fainted(pkmn):
         return True
     else:
         return False
+
+def my_moves(pkmn):
+    s = "\n    0: Go Back"
+    i = 1
+    for m in pkmn.moves:
+        s = s + "\n    " + str(i) + ": " + (str(m))
+        i += 1
+    return s

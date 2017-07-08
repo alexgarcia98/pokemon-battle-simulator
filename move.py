@@ -54,5 +54,4 @@ class Move:
         )
 
     def __repr__(self):
-        return ("Pair({!r}, {!r}, {!r}, {!r}, {!r}, {!r}, {!r})".format(
-            self.name, self.category, self.mtype, self.power, self.accuracy, self.pp, self.priority))
+        return str(self.name)
