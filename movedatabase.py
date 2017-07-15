@@ -41,3 +41,21 @@ dragon_dance = Move("Dragon Dance", "status", 15, 0, 1, 32, 0)
 dragon_claw = Move("Dragon Claw", "physical", 15, 80, 1, 24, 0)
 flare_blitz = Move("Flare Blitz", "physical", 9, 120, 1, 24, 0)
 roost = Move("Roost", "status", 2, 0, 1, 16, 0)
+
+scald = Move("Scald", "special", 10, 80, 1, 24, 0)
+dark_pulse = Move("Dark Pulse", "special", 16, 80, 1, 24, 0)
+aura_sphere = Move("Aura Sphere", "special", 1, 80, 1, 32, 0)
+ice_beam = Move("Ice Beam", "special", 14, 90, 1, 16, 0)
+
+'''
+
+Blastoise @ Blastoisinite
+Ability: Rain Dish
+EVs: 56 HP / 252 SpA / 200 Spe
+Modest Nature
+- Scald
+- Dark Pulse
+- Aura Sphere
+- Ice Beam
+
+'''

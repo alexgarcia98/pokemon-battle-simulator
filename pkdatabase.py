@@ -75,4 +75,10 @@ def Charizard():
     charizard = Pokemon("Charizard", "Dragon Dance X", blaze, charizard_stats, charizard_moves, 0, "Charizardite X")
     return charizard
 
-pklist = [Venusaur, Charizard]
+def Blastoise():
+    blastoise_stats = [100, HP(313, 313), 181, 236, 295, 246, 242, bonuses, 10, 18]
+    blastoise_moves = [[scald, 24], [dark_pulse, 24], [aura_sphere, 32], [ice_beam, 16]]
+    blastoise = Pokemon("Blastoise", "All-out Attacker", rain_dish, blastoise_stats, blastoise_moves, 0, "Blastoisinite")
+    return blastoise    
+
+pklist = [Venusaur, Charizard, Blastoise]

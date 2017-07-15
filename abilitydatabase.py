@@ -7,9 +7,10 @@ from ability import *
 # 3 - after attack (offense): activated after initiating attack (ex: Magician)
 # 4 - during attack (defense): activated upon taking damage (ex: Lightningrod)
 # 5 - after attack (defense): activated after taking damage (ex: Rough Skin)
+# 6 - end of turn: activated right before the turn ends (ex: Rain Dish)
 
 # an AType is one of the numbers
-# 0 through 5
+# 0 through 6
 # where each number corresponds to the effects listed above
 
 # an ability is Ability(AType, str)
@@ -18,3 +19,4 @@ from ability import *
 
 chlorophyll = Ability(0, "Chlorophyll")
 blaze = Ability(2, "Blaze")
+rain_dish = Ability(6, "Rain Dish")
