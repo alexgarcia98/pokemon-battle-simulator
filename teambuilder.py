@@ -96,6 +96,7 @@ def team_add(list1, size):
             break
         except ValueError:
             print("\nThat was not a valid number.  Try again...")
+            return team_add(list1, size)
     if((x >= 0) and (x <= len(pklist))):
         if(x == 0):
             return team_builder(list1, size)
@@ -126,6 +127,7 @@ def team_remove(list1, size):
             break
         except ValueError:
             print("\nThat was not a valid number.  Try again...")
+            return team_remove(list1, size)
     if((x >= 0) and (x <= len(pklist))):
         if(x == 0):
             return team_builder(list1, size)

@@ -42,7 +42,9 @@ def get_faster(p1, p2):
 def is_loser(p1):
     l = 0
     for i in range(0, 6):
-        if(is_fainted(p1.team[i]) == False):
+        if(p1.team[i] == "No Pokemon"):
+            pass
+        elif(is_fainted(p1.team[i]) == False):
             l += 1
     if(l == 0):
         return True

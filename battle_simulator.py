@@ -81,10 +81,12 @@ def battle(arena1):
     # turn()
 
 def start_turn(arena1):
+    if(arena1 == None):
+        return None
     action1 = choose_move(arena1, arena1.player1)
     print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
     action2 = choose_move(arena1, arena1.player2)
-    turn(arena1, action1, action2)
+    return turn(arena1, action1, action2)
 
 def turn(arena1, action1, action2):
     if((action1 == "loser") and (action2 == "loser")):
@@ -116,10 +118,6 @@ def execute_action(arena1, action1, action2):
     c1 = arena1.player1.current
     c2 = arena1.player2.current
     faster = get_faster(arena1.player1, arena1.player2)
-    print("Action1: " + str(action1))
-    print("Action1 Type: " + str(type(action1)))
-    print("Action2: " + str(action2))
-    print("Action2 Type: " + str(type(action2)))
     if((arena1.player1 == faster) and (type(action1) == Move)):
         arena2 = attack_mon(arena1, action1, action2, arena1.player1, arena1.player2)
     elif((arena1.player2 == faster) and (type(action2) == Move)):
@@ -129,9 +127,15 @@ def execute_action(arena1, action1, action2):
     return arena2
 
 def attack_mon(arena1, action1, action2, p1, p2):
+    poke1 = p1.current
+    poke2 = p2.current
     arena2 = domage(arena1, action1, action2, p1, p2)
-    if(type(action2) == Move):
+    if(arena2 == None):
+        return None
+    elif((type(action2) == Move) and (p2.current == poke2)):
         arena3 = domage(arena2, action2, action1, p2, p1)
+    else:
+        arena3 = arena2
     return arena3
 
 def domage(arena1, action1, action2, p1, p2):
@@ -207,6 +211,7 @@ def replace_pkmn(arena1, p1, p2):
             print("\n" + str(p1.team[x - 1]) + " is fainted! Choose someone else.")
             return replace_pkmn(arena1, p1, p2)
         else:
+            print("\n" + str(p1.name) + " sent out " + str(p1.team[x - 1]) + "!")
             return p1.team[x - 1]
     else:
         print("\nOut of range. Please try again...")

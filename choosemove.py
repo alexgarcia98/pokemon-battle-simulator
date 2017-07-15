@@ -8,7 +8,8 @@ def choose_move(arena1, p):
     print("\n" + str(p.name) + ", choose your move.\n" +
         "    1) Fight\n" +
         "    2) Switch\n" +
-        "    3) Forfeit\n" +
+        "    3) View Field\n" +
+        "    4) Forfeit\n" +
         "Enter Selection: ", end="")
     answer = stdin.readline()
     if(answer == "1\n"):
@@ -16,6 +17,8 @@ def choose_move(arena1, p):
     elif(answer == "2\n"):
         return switch(arena1, p)
     elif(answer == "3\n"):
+        return view_field(arena1, p)
+    elif(answer == "4\n"):
         return forfeit(arena1, p)
     else:
         print("\nInvalid option")
@@ -71,6 +74,27 @@ def switch(arena1, p):
     else:
         print("\nOut of range. Please try again...")
         return switch(arena1, p)
+
+def view_field(arena1, p):
+    print("")
+    if(p == arena1.player2):
+        print(str(arena1.player1.name) + "'s side:\n" +
+            "    " + str(arena1.player1.current) + " (Level " +
+            str(arena1.player1.current.stats[0]) + ")" + "\n    HP: " +
+            str(arena1.player1.current.stats[1].current) + "/" +
+            str(arena1.player1.current.stats[1].base))
+    else:
+        print(str(arena1.player2.name) + "'s side:\n" +
+            "    " + str(arena1.player2.current) + " (Level " +
+            str(arena1.player2.current.stats[0]) + ")" + "\n    HP: " +
+            str(arena1.player2.current.stats[1].current) + "/" +
+            str(arena1.player2.current.stats[1].base))
+    print("\nYour side:\n" +
+        "    " + str(p.current) + " (Level " +
+        str(p.current.stats[0]) + ")" + "\n    HP: " +
+        str(p.current.stats[1].current) + "/" +
+        str(p.current.stats[1].base))
+    return choose_move(arena1, p)
 
 def print_alive(p):
     s = "\n    0: Go Back"
